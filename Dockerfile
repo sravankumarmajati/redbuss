@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install default-jdk -y && apt-get install wget -y 
 RUN sed -i 's/port="8080"/port="4287"/' /opt/tomcat/conf/server.xml
 CMD ["catalina.sh", "run"]
 EXPOSE 4287
+COPY target/redbuss-1.0-SNAPSHOT.jar /opt/tomcat/webapps/
 
 
 
